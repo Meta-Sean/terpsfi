@@ -4,7 +4,7 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import styles from './layout.module.css';
 
-const name = 'Terps';
+const name = 'terpsfi';
 export const siteTitle = 'terpsfi'
 
 export default function Layout({ children, home }) {
