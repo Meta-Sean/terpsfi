@@ -4,6 +4,10 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Date from '../components/date';
+import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
+import { RainbowHighlight } from '../components/RainbowHighlight';
+
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,13 +19,14 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
+  const colors = ["#F59E0B", "#84CC16", "#10B981", "#3B82F6"];
   return (
     <Layout home>
         <Head>
           <title>{siteTitle}</title>
         </Head>
         <section className={utilStyles.headingMd}>
-          <p>I was told everyone needs a website, so here we are, welcome to my corner of the interwebs, my name is terps and I will be your guide today.</p>
+            <p>I was told everyone needs a website, so here we are, welcome to my corner of the interwebs, my name is terps and I will be your guide today.</p>
         </section>
         <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -38,6 +43,20 @@ export default function Home({ allPostsData }) {
               </li>
             ))}
           </ul>
+          <RoughNotationGroup show={true}>
+            <RainbowHighlight color={colors[0]}>
+            <p>god damn morty, they said show off them skills</p>
+            </RainbowHighlight>
+            <RainbowHighlight color={colors[1]}>
+            <p>I.. I... don't know rick this css is a little jarring</p>
+            </RainbowHighlight>
+            <RainbowHighlight color={colors[2]}>
+            <p>jarring...? what do you know about jarring little prick</p>
+            </RainbowHighlight>
+            <RainbowHighlight color={colors[3]}>
+            <p>gosh... ooo jeez sorry rick</p>
+            </RainbowHighlight>
+          </RoughNotationGroup>
         </section>
     </Layout>
   );

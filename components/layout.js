@@ -3,6 +3,7 @@ import Image from 'next/image';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import styles from './layout.module.css';
+import Navbar from './Navbar';
 
 const name = 'terpsfi';
 export const siteTitle = 'terpsfi'
@@ -13,8 +14,8 @@ export default function Layout({ children, home }) {
             <Head>
                 <link re='icon' href='/favicon.ico' />
                 <meta
-                    name='description'
-                    content='terpsfi personal site'
+                    name="robots"
+                    content="follow, index"
                 />
                 <meta
                     property="og:image"
@@ -23,8 +24,10 @@ export default function Layout({ children, home }) {
                     )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
                 />
                 <meta name="og:title" content={siteTitle} />
-                <meta name="twitter:card" content="summary_large_image" />   
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@terpsfi" />   
             </Head>
+            <Navbar />
             <header className={styles.header}>
                 {home ? (
                     <>
